@@ -1,35 +1,25 @@
 from win10toast import ToastNotifier
 import random
+from dictionaries import dictDE
+from dictionaries import dictPL
 
-x = random.randint(1, len(dictPL))
+x = random.randint(1, len(dictDE))
+x = str(x)
 
+# print(dictDE.get(x))
 
-dictDE = {
-    "1" : "der Himmel",
-    "2" : "der Hund",
-    "3" : "das Gimpfel"
-}
+y = random.randint(1, 2)
 
-dictPL = {
-    "1" : "niebo",
-    "2" : "pies",
-    "3" : "szczyt"
-}
-
-
-
-
-# print(dictionary)
-# print(dictionary.get("szczyt"))
-print(dictDE)
-print(dictPL)
-
-# toaster = ToastNotifier()
-# toaster.show_toast("Zgadnij słówko", x, duration=10)
-#
-#
-# toaster2 = ToastNotifier()
-# toaster2.show_toast("Zgadnij słówko", x, duration=10)
+if y == 1:
+    toaster = ToastNotifier()
+    toaster.show_toast("Zgadnij słówko", dictDE.get(x), duration=10)
+    toaster2 = ToastNotifier()
+    toaster2.show_toast("Zgadnij słówko", dictPL.get(x), duration=10)
+else:
+    toaster2 = ToastNotifier()
+    toaster2.show_toast("Zgadnij słówko", dictPL.get(x), duration=10)
+    toaster = ToastNotifier()
+    toaster.show_toast("Zgadnij słówko", dictDE.get(x), duration=10)
 
 
 
