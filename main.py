@@ -1,12 +1,35 @@
 from win10toast import ToastNotifier
-from datetime import datetime
+import random
 
-toaster = ToastNotifier()
-toaster.show_toast("Zgadnij słówko", "Słówko po niemiecku", duration=10)
+x = random.randint(1, len(dictPL))
 
 
-toaster2 = ToastNotifier()
-toaster2.show_toast("Zgadnij słówko", "Słówko po polsku", duration=10)
+dictDE = {
+    "1" : "der Himmel",
+    "2" : "der Hund",
+    "3" : "das Gimpfel"
+}
+
+dictPL = {
+    "1" : "niebo",
+    "2" : "pies",
+    "3" : "szczyt"
+}
+
+
+
+
+# print(dictionary)
+# print(dictionary.get("szczyt"))
+print(dictDE)
+print(dictPL)
+
+# toaster = ToastNotifier()
+# toaster.show_toast("Zgadnij słówko", x, duration=10)
+#
+#
+# toaster2 = ToastNotifier()
+# toaster2.show_toast("Zgadnij słówko", x, duration=10)
 
 
 
